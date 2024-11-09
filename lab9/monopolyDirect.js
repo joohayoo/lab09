@@ -10,6 +10,9 @@ const db = pgp({
   password: process.env.DB_PASSWORD,
   // For SSL, see: https://stackoverflow.com/questions/22301722/ssl-for-postgresql-connection-nodejs
   ssl: true,
+  ssl: {
+    rejectUnathorized: false,
+  }
 });
 
 // Send the SQL command directly to Postgres.
